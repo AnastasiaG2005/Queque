@@ -1,0 +1,31 @@
+public class MyQueue {
+    private int[] queue;
+    private int front;
+    private int rear;
+
+    public MyQueue(int capacity) {
+        queue = new int[capacity];
+        front = 0;
+        rear = 0;
+    }
+
+    public void enqueue(int item) {
+        if (rear < queue.length) {
+            queue[rear++] = item;
+        }
+    }
+
+    public int dequeue() {
+        if (front < rear) {
+            return queue[front++];
+        }
+        return -1; // или любое другое значение для пустой очереди
+    }
+
+    public int peek() {
+        if (front < rear) {
+            return queue[front];
+        }
+        return -1; // или любое другое значение для пустой очереди
+    }
+}
